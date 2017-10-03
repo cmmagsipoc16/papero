@@ -1,2 +1,2 @@
 # papero
-all expences spared CLI text editor
+all expenses spared CLI text editor
