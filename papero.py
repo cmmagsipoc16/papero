@@ -8,6 +8,8 @@ import random
 import tty
 import termios
 
+import os.path
+
 orig_tty_settings = termios.tcgetattr(sys.stdin)
 
 isRunning = True
@@ -61,9 +63,16 @@ c = 0
 
 #text_in = str() 		# size pow(2, 7)
 
-# generate random draft for testing
-for i in range(30):
-	file_string += chr(random.randint(65, 75))
+if argc == 2:
+	fp = open(argv[1], "a+")
+	if(os.path.getsize(argv[1]) > 0):
+		fp.seek(0)
+		file_string = fp.read()
+		sys.stdout.write(file_string)
+else:
+	# generate random draft for testing
+	for i in range(30):
+		file_string += chr(random.randint(65, 75))
 
 while(isRunning):
 	drawDraft()
