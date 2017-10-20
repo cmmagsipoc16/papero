@@ -10,15 +10,15 @@ def initProg():
 	curses.noecho()
 	stdscr.keypad(1)
 	
-	# create window for showing mode
-	# params: nlines, ncols
+	# create window for showing mode status
+	# params: nlines, ncols, top left coord, top right coord
 	modeStat = curses.newwin(2, 30, 0, 0)
 
 	# create window for textpad
 	begin_x = 0
 	begin_y = 3
 	numLines = 150
-	numCols = 200
+	numCols = 100
 	# params: nlines, ncols, top left coord of y, top left coord of x	
 	editWin = curses.newwin(numLines, numCols, begin_y, begin_x)
 
